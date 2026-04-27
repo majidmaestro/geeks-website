@@ -1,18 +1,19 @@
 const header = document.querySelector("header");
 header.style.backgroundColor = "blue";
-
-
+const h1 = document.querySelector("h1");
+const headerParagraph = document.querySelector("#header-p");
 const button = document.querySelector("#submit-button");
-button.addEventListener("click",(event) => {
-    // prevent form from refreshing itself
-    event.preventDefault();
-    // retrieve value from the form 
-    const fullName = document.querySelector("#full-name").value;
+let fullName;
+let email;
+let message;
 
-const email = document.querySelector("#email").value;
-const message = document.querySelector("#message").value;
-
-console.log(fullName);
-console.log(email);
-console.log(message);
+button.addEventListener("click", (event) => {
+  // prevent form from refreshing itself
+  event.preventDefault();
+  // retrieve value from the form
+  fullName = document.querySelector("#full-name").value;
+  email = document.querySelector("#email").value;
+  message = document.querySelector("#message").value;
+  h1.textContent = fullName;
+  headerParagraph.textContent = message;
 });
